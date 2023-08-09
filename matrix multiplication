@@ -1,0 +1,54 @@
+#include<stdio.h>
+#define MAX 50
+int main()
+{
+
+int a[MAX][MAX],b[MAX][MAX],product[MAX][MAX];
+int sum=0;
+int arows,acolumns,brows,bcolumns;
+int i,j,k,max;
+printf("enter the arows and acolumns matixes of a\n : ");
+scanf("%d%d",&arows,&acolumns);
+printf("enter the brows and bcolumns matrixes of b \n:");
+scanf("%d%d",&brows,&bcolumns);
+printf("enter the matrixes for a\n");
+
+for(i=0;  i<arows; i++)
+{
+	for(j=0; j<acolumns; j++){
+		scanf("%d",&a[i][j]);
+	}
+}
+	printf("enter the matrixes for b\n");
+	for(i=0;i<brows;i++){
+		for(j=0;j<bcolumns;j++){
+			scanf("%d",&b[i][j]);
+		}
+	}
+	if(brows!=acolumns){
+		printf("we cannot multiply ");
+	}
+	else{
+	printf("\n");
+	for(i=0;i<arows;i++){
+		for(j=0;j<bcolumns;j++){
+			for(k=0;k<brows;k++){
+			  //k=brows or acolumns
+			  sum+= a[i][k] * b[k][j];
+			  sum=0;
+		}
+	}	
+	}
+	printf("the result matrixes\n");
+	for(i=0;i<arows;i++){
+			  product[i][j]=sum;
+		for(j=0;j<bcolumns;j++){
+			printf("%d",product[i][j]);
+		}
+		printf("\n");
+	}
+}
+  return 0;
+}
+
+ 
